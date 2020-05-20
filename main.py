@@ -1,9 +1,11 @@
 #A program that handles hotel room occupancy
 #Work done by: Kravtsov - 80%
+#              Mauter - 15%
+#              Mikhailov - 20%
 import classes as cl
 import random as r
 
-
+#This function consider income and losses of the hotel
 def main():
     lost_profit = 0.00
     day_profit = 0.00
@@ -41,7 +43,7 @@ def main():
 
             suitable_rooms = []
             
-            'settelment of people'
+            #settelment of people
             if int(guest.date[:2]) > day and len(reserved_rooms) > 0:
                 print('=' * 86)
                 print('Итог за ', day, guest.date[2:], sep='')
@@ -77,7 +79,7 @@ def main():
                 lost_profit = 0.00
                 day = int(guest.date[:2])
                 
-                'check for a reserved rooom'
+                #check for a reserved rooom
                 reserved_rooms_work = []
                 for j in range(len(reserved_rooms)):
                     room_reserved = all_rooms[int(reserved_rooms[j]) - 1]
@@ -96,7 +98,7 @@ def main():
             print('Поступила заявка на бронирование:')
             print(guest)
             
-            'room selection'
+            #room selection
              for j in range(len(all_rooms)):
                 if not all_rooms[j].room in reserved_rooms:
                     room_j = all_rooms[j]
@@ -140,7 +142,7 @@ def main():
 
                 probability_of_failure = r.randint(0, 100)
                 
-                'room suitability'
+                #room suitability
                 if probability_of_failure <= 25:
                     print('Найден:')
                     number_room = all_rooms[int(suitable_rooms[0][2]) - 1]
