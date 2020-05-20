@@ -79,7 +79,7 @@ def main():
                 lost_profit = 0.00
                 day = int(guest.date[:2])
                 
-                #check for a reserved rooom
+                #check for a reserved room
                 reserved_rooms_work = []
                 for j in range(len(reserved_rooms)):
                     room_reserved = all_rooms[int(reserved_rooms[j]) - 1]
@@ -99,7 +99,7 @@ def main():
             print(guest)
             
             #room selection
-             for j in range(len(all_rooms)):
+            for j in range(len(all_rooms)):
                 if not all_rooms[j].room in reserved_rooms:
                     room_j = all_rooms[j]
                     price_one = float(prices[room_j.type_room]) * float(prices[room_j.comfort])
