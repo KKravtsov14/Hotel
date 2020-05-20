@@ -1,7 +1,7 @@
 # classes should be here
 class Booking:
-    'instance initialization'
     def __init__(self, date, name, sum_people, arrival_date, number_of_days, max_bank):
+        'instance initialization'
 
         self.max_bank = max_bank
         self.number_of_days = number_of_days
@@ -9,14 +9,14 @@ class Booking:
         self.sum_people = sum_people
         self.name = name
         self.date = date
-        
-    'instance wait and string return'
+       
     def __str__(self):
+        'instance wait and string return'
         return f'{self.date} {self.name} {self.sum_people} {self.arrival_date} ' \
                f'{self.number_of_days} {self.max_bank}'
     
-    'getting class instance'
     def __repr__(self):
+        'getting class instance'
         return self.__str__()
 
 
