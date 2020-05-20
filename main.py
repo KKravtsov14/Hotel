@@ -26,7 +26,7 @@ def main():
                 pl_rooms.append(room.room)
             else:
                 l_rooms.append(room.room)
-
+                
     with open('booking.txt', 'r', encoding='utf-8') as booking:
         reserved_rooms = []
         day = 1
@@ -40,7 +40,8 @@ def main():
             guest = cl.Booking(date, name, sum_people, arrival_date, number_of_days, max_bank)
 
             suitable_rooms = []
-
+            
+            'settelment of people'
             if int(guest.date[:2]) > day and len(reserved_rooms) > 0:
                 print('=' * 86)
                 print('Итог за ', day, guest.date[2:], sep='')
@@ -75,7 +76,8 @@ def main():
                 day_profit = 0.00
                 lost_profit = 0.00
                 day = int(guest.date[:2])
-
+                
+                'check for a reserved rooom'
                 reserved_rooms_work = []
                 for j in range(len(reserved_rooms)):
                     room_reserved = all_rooms[int(reserved_rooms[j]) - 1]
@@ -93,8 +95,9 @@ def main():
             print('-' * 86)
             print('Поступила заявка на бронирование:')
             print(guest)
-
-            for j in range(len(all_rooms)):
+            
+            'room selection'
+             for j in range(len(all_rooms)):
                 if not all_rooms[j].room in reserved_rooms:
                     room_j = all_rooms[j]
                     price_one = float(prices[room_j.type_room]) * float(prices[room_j.comfort])
@@ -136,7 +139,8 @@ def main():
                 suitable_rooms.sort(key=lambda j: (j[1], -j[0]))
 
                 probability_of_failure = r.randint(0, 100)
-
+                
+                'room suitability'
                 if probability_of_failure <= 25:
                     print('Найден:')
                     number_room = all_rooms[int(suitable_rooms[0][2]) - 1]
